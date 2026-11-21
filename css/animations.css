@@ -1,0 +1,18 @@
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+  .reveal.is-visible{opacity:1;transform:none}
+  .hero-copy{animation:enter-up .8s var(--ease) both}
+  .hero-art{animation:enter-up 1s .15s var(--ease) both}
+  .dashboard-window{animation:float-window 8s ease-in-out infinite}
+  .commerce-window{animation:float-commerce 7s ease-in-out infinite}
+  .floating-chip{animation:float-chip 6s ease-in-out infinite}
+  @keyframes enter-up{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+  @keyframes float-window{0%,100%{transform:perspective(1200px) rotateY(-8deg) rotateX(3deg) translateY(0)}50%{transform:perspective(1200px) rotateY(-8deg) rotateX(3deg) translateY(-8px)}}
+  @keyframes float-commerce{0%,100%{transform:rotate(6deg) translateY(0)}50%{transform:rotate(6deg) translateY(8px)}}
+  @keyframes float-chip{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(-4deg) translateY(-7px)}}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
